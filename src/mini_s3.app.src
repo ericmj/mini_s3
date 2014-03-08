@@ -25,7 +25,6 @@
   {registered, []},
   {applications, [stdlib,
                   kernel,
-                  sasl,
                   public_key,
                   crypto,
                   ssl,
