@@ -835,11 +835,11 @@ s3_request(Config = #config{access_key_id=AccessKey,
             "" -> [];
             _ -> [{"content-md5", binary_to_list(ContentMD5)}]
         end,
-    RequestHeaders1 = case proplists:is_defined("Content-Type", RequestHeaders0) of
+    RequestHeaders1 = case proplists:is_defined("content-type", RequestHeaders0) of
                           true ->
                               RequestHeaders0;
                           false ->
-                              [{"Content-Type", ContentType} | RequestHeaders0]
+                              [{"content-type", ContentType} | RequestHeaders0]
                       end,
     RequestURI = lists:flatten([format_s3_uri(Config, Host),
                                 EscapedPath,
